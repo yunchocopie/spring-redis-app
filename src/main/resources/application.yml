@@ -6,10 +6,10 @@ server:
   port: 9000
 
 spring:
-  redis:
-    data:
+  data:
+    redis:
       host: 127.0.0.1
-      poit: 6379
+      port: 6379
       password:
   datasource:
     driver-class-name: org.h2.Driver
@@ -36,4 +36,3 @@ spring:
     servlet:
       expose-session-attributes: true
       expose-request-attributes: true
-

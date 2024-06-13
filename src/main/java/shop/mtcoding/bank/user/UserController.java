@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @RequiredArgsConstructor
 @Controller
@@ -16,6 +17,11 @@ public class UserController {
     @GetMapping("/home")
     public String home(){
         return "home";
+    }
+
+    @GetMapping("/redis/test")
+    public @ResponseBody String redisTest(){
+        return "redis test";
     }
 
     @GetMapping("/logout")
