@@ -21,6 +21,8 @@ public class UserController {
 
     @GetMapping("/redis/test")
     public @ResponseBody String redisTest(){
+        User sessionUser = (User)session.getAttribute("sessionUser");
+        System.out.println("username : " + sessionUser.getUsername());
         return "redis test";
     }
 
@@ -41,13 +43,11 @@ public class UserController {
         }
     }
 
-
     @PostMapping("/join") // 회원가입
     public String join(UserRequest.JoinDTO reqDTO){
         userService.회원가입(reqDTO);
         return "redirect:/login-form";
     }
-
 
     @GetMapping("/join-form")
     public String joinForm(){
